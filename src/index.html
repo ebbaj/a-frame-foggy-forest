@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <!-- Include A-frame library, not good for production -->
+    <script src="https://unpkg.com/aframe@latest"></script>
+    <!-- Animation script for the 3D model -->
+    <script src="https://unpkg.com/aframe-extras@6.1.0/dist/aframe-extras.loaders.min.js"></script>
+    <!-- Environemt component script -->
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <!-- Component scripts -->
+    <script src="../src/js/color-toggle.js"></script>
+    <!-- <script src="src/js/target-marker.js"></script> -->
+    <script src="../src/js/riddle.js"></script>
+    <script src="../src/js/box-game.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- RIDDLE GAME -->
+      <div class="popup hide riddle-game-container">
+        <div id="text"></div>
+        <div id="option-buttons"></div>
+        <div class="button-div">
+          <button id="next-button" class="button">Next</button>
+          <button class="popup-button" onClick="closePopup()">Close</button>
+        </div>
+      </div>
+      <!-- END OF RIDDLE GAME -->
+
+      <!-- BOXES GAME-->
+      <div class="boxes-popup hide boxes-game-container">
+        <h3>Congratulations!</h3>
+        <p id="boxes-text">
+          You found the missing piece! The spaceship is no longer missing its
+          <span>steering wheel.</span>
+        </p>
+        <button class="boxes-popup-button" onClick="closeBoxesPopup()">
+          Close
+        </button>
+      </div>
+      <!-- END OF BOXES GAME-->
+
+      <!-- Inside the scene is where all the a-frame things go, only one scene -->
+      <a-scene
+        vr-mode-ui="enabled: false"
+        class="scene boxes-scene"
+        vr-mode-ui
+        cursor="rayOrigin: mouse"
+        fog="type: linear; color: white; near: 0; far: 10"
+        environment="preset:  goaland;  active:  true;  skyType:  gradient;  skyColor:  #000000;  horizonColor:  #9992f7;  lighting:  point;  shadow:  true;  lightPosition:  [object Object];  fog:  0.95;  groundTexture:  squares;  dressing:  trees;  dressingAmount:  300;  dressingVariance:  [object Object]"
+      >
+        <a-light type="ambient" color="gray"></a-light>
+        <a-light type="point" intensity="2" position="0 0 -2"></a-light>
+        <a-sky color="#002746"></a-sky>
+        <a-cylinder
+          position="0 0 -4"
+          radius="0.5"
+          height="1.5"
+          color="#1E9B44"
+          shadow
+          color-toggle
+          target-marker
+          open-popup
+        >
+        </a-cylinder>
+        <a-box
+          id="box-1"
+          class="closed"
+          color="#301904"
+          position="-29 0 1"
+          open-box
+        ></a-box>
+        <a-box
+          id="box-2"
+          class="closed"
+          color="#301904"
+          position="21 0 7"
+          open-box
+        ></a-box>
+        <a-box
+          id="box-3"
+          class="closed"
+          color="#301904"
+          position="-1 0 -47"
+          open-box
+        ></a-box>
+
+        <a-entity id="rig">
+          <a-entity camera position="0 2 0" look-controls wasd-controls>
+            <a-cursor id="cursor" raycaster></a-cursor>
+          </a-entity>
+        </a-entity>
+      </a-scene>
+    </main>
+  </body>
+</html>
