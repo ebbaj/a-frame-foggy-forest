@@ -98,9 +98,15 @@ function game() {
   };
 
   function endRiddleGame(textNode) {
+    const box1 = document.getElementById("box-1");
+    const box2 = document.getElementById("box-2");
+    const box3 = document.getElementById("box-3");
     if (textNode.id === textNodes.length) {
       nextButtonElement.disabled = true;
       popupButton.disabled = false;
+      box1.setAttribute("visible", true);
+      box2.setAttribute("visible", true);
+      box3.setAttribute("visible", true);
     }
   }
 

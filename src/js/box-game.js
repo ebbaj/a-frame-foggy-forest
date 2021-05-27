@@ -3,12 +3,12 @@ AFRAME.registerComponent("open-box", {
   init: function () {
     let el = this.el;
     this.openBox = function () {
-      el.setAttribute("color", "green");
+      el.setAttribute("color", "#1E9B44");
       if (el.classList.contains("closed")) {
         el.classList.remove("closed");
         el.classList.add("opened");
+        console.log(el.classList);
       }
-      console.log(el.classList);
       boxGame();
       //alert("Box opened");
     };
@@ -23,6 +23,7 @@ function boxGame() {
   const box1 = document.getElementById("box-1");
   const box2 = document.getElementById("box-2");
   const box3 = document.getElementById("box-3");
+  const gate = document.getElementById("gate");
   if (
     box1.classList.contains("opened") &&
     box2.classList.contains("opened") &&
@@ -38,6 +39,7 @@ function openBoxesPopup() {
 
   boxesPopup.classList.remove("hide");
   boxesScene.classList.add("layer");
+  gate.setAttribute("visible", true);
   findMissingPiece();
 }
 
@@ -66,11 +68,22 @@ function findMissingPiece() {
     boxesTitle.innerText = boxTextNode.title;
     boxesText.innerText = boxTextNode.text;
     boxesNextButton.addEventListener("click", () => next(boxTextNode));
+    end(boxTextNode);
   }
 
   function next(boxTextNode) {
     const nextTextNodeId = boxTextNode.nextText;
     showBoxTextNodes(nextTextNodeId);
+  }
+
+  function end(boxTextNode) {
+    if (boxTextNode.id === 2) {
+      boxesNextButton.disabled = true;
+      boxesPopupButton.disabled = false;
+    } else {
+      boxesNextButton.disabled = false;
+      boxesPopupButton.disabled = true;
+    }
   }
 
   const boxTextNodes = [
