@@ -38,6 +38,7 @@ function openBoxesPopup() {
 
   boxesPopup.classList.remove("hide");
   boxesScene.classList.add("layer");
+  findMissingPiece();
 }
 
 function closeBoxesPopup() {
@@ -46,4 +47,45 @@ function closeBoxesPopup() {
 
   boxesPopup.classList.add("hide");
   boxesScene.classList.remove("layer");
+}
+
+function findMissingPiece() {
+  const boxesText = document.getElementById("boxes-text");
+  const boxesTitle = document.getElementById("boxes-title");
+  const boxesNextButton = document.getElementById("boxes-next-button");
+  const boxesPopupButton = document.getElementById("boxes-popup-button");
+
+  function start() {
+    showBoxTextNodes(1);
+  }
+
+  function showBoxTextNodes(boxTextNodeIndex) {
+    const boxTextNode = boxTextNodes.find(
+      (boxTextNode) => boxTextNode.id === boxTextNodeIndex
+    );
+    boxesTitle.innerText = boxTextNode.title;
+    boxesText.innerText = boxTextNode.text;
+    boxesNextButton.addEventListener("click", () => next(boxTextNode));
+  }
+
+  function next(boxTextNode) {
+    const nextTextNodeId = boxTextNode.nextText;
+    showBoxTextNodes(nextTextNodeId);
+  }
+
+  const boxTextNodes = [
+    {
+      id: 1,
+      title: "Congratulations!",
+      text: "You found the missing piece! The spaceship is no longer missing its steering wheel.",
+      nextText: 2,
+    },
+    {
+      id: 2,
+      title: "Paul:",
+      text: "Now, get out of my forest! I know there's a way out of here... somewhere...",
+      nextText: 2,
+    },
+  ];
+  start();
 }

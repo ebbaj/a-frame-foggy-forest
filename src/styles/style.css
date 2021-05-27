@@ -46,7 +46,8 @@ main {
 }
 
 .popup-button,
-.boxes-popup-button,
+#boxes-popup-button,
+#boxes-next-button,
 #next-button {
   background-color: #fdce1f;
   font-family: "Play", sans-serif;
@@ -54,10 +55,6 @@ main {
   color: black;
   border: none;
   padding: 0.5rem;
-}
-
-.boxes-popup-button {
-  width: 5rem;
 }
 
 #option-buttons button {

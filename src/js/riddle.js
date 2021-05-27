@@ -107,7 +107,7 @@ function game() {
   const textNodes = [
     {
       id: 1,
-      text: "Hello space scavenger! Welcome to the foggy forest.",
+      text: "Hello space scavenger! Welcome to the foggy forest. I'm Paul the Oxo.",
       nextText: 2,
     },
     {
