@@ -92,3 +92,20 @@ span {
 .boxes-popup h3 {
   margin-bottom: 0;
 }
+
+@media (max-width: 1024px) {
+  .popup,
+  .boxes-popup,
+  .not-found-popup {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup,
+  .boxes-popup,
+  .not-found-popup {
+    width: 60%;
+    font-size: 20px;
+  }
+}
