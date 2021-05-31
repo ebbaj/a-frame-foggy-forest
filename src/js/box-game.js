@@ -3,7 +3,7 @@ AFRAME.registerComponent("open-box", {
   init: function () {
     let el = this.el;
     this.openBox = function () {
-      el.setAttribute("color", "#1E9B44");
+      //el.setAttribute("color", "#1E9B44");
       if (el.classList.contains("closed")) {
         el.classList.remove("closed");
         el.classList.add("opened");
@@ -30,6 +30,8 @@ function boxGame() {
     box3.classList.contains("opened")
   ) {
     openBoxesPopup();
+  } else {
+    openNotFoundPopup();
   }
 }
 
@@ -48,6 +50,22 @@ function closeBoxesPopup() {
   let boxesScene = document.querySelector(".boxes-scene");
 
   boxesPopup.classList.add("hide");
+  boxesScene.classList.remove("layer");
+}
+
+function openNotFoundPopup() {
+  let notFoundPopup = document.querySelector(".not-found-popup");
+  let boxesScene = document.querySelector(".boxes-scene");
+
+  notFoundPopup.classList.remove("hide");
+  boxesScene.classList.add("layer");
+}
+
+function closeNotFoundPopup() {
+  let notFoundPopup = document.querySelector(".not-found-popup");
+  let boxesScene = document.querySelector(".boxes-scene");
+
+  notFoundPopup.classList.add("hide");
   boxesScene.classList.remove("layer");
 }
 
@@ -96,7 +114,7 @@ function findMissingPiece() {
     {
       id: 2,
       title: "Paul:",
-      text: "Now, get out of my forest! I know there's a way out of here... somewhere...",
+      text: "Now, get out of my forest! I know there's a way out of here... Somewhere...🤔",
       nextText: 2,
     },
   ];

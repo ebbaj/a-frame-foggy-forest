@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 main {
   display: flex;
@@ -8,22 +8,24 @@ main {
   min-height: 100vh;
 }
 
-.popup {
+.popup,
+.boxes-popup,
+.not-found-popup {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   width: 35%;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.75);
-  color: #fdce1f;
-  font-family: "Play", sans-serif;
+  color: #d9d9d9;
+  font-family: "Space Mono", monospace;
   font-size: 24px;
   padding: 2rem;
   border-radius: 20px;
-  border: 2px solid #fdce1f;
+  border: 2px solid #d9d9d9;
   align-self: center;
 }
-
+/*
 .boxes-popup {
   display: flex;
   flex-direction: column;
@@ -31,15 +33,15 @@ main {
   width: 35%;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.75);
-  color: #fdce1f;
-  font-family: "Play", sans-serif;
+  color: #d9d9d9;
+  font-family: "Space Mono", monospace;
   font-size: 24px;
   padding: 2rem;
   border-radius: 20px;
-  border: 2px solid #fdce1f;
+  border: 2px solid #d9d9d9;
   align-self: center;
 }
-
+*/
 .button-div {
   margin-top: 2rem;
   align-self: flex-end;
@@ -49,8 +51,8 @@ main {
 #boxes-popup-button,
 #boxes-next-button,
 #next-button {
-  background-color: #fdce1f;
-  font-family: "Play", sans-serif;
+  background-color: #d9d9d9;
+  font-family: "Space Mono", monospace;
   font-size: 18px;
   color: black;
   border: none;
@@ -59,10 +61,10 @@ main {
 
 #option-buttons button {
   background-color: #fff;
-  font-family: "Play", sans-serif;
+  font-family: "Space Mono", monospace;
   font-size: 18px;
   color: black;
-  border: 2px solid #fdce1f;
+  border: 2px solid #f2c0a2;
   padding: 0.5rem;
   margin: 1rem 0.3rem 0 0;
 }

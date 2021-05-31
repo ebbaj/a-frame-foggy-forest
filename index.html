@@ -38,6 +38,15 @@
           </button>
         </div>
       </div>
+
+      <div class="not-found-popup hide">
+        <p>Hmm... The piece is not in this one, let's keep looking!</p>
+        <div class="button-div">
+          <button id="boxes-popup-button" onClick="closeNotFoundPopup()">
+            Close
+          </button>
+        </div>
+      </div>
       <!-- END OF BOXES GAME-->
 
       <!-- Inside the scene is where all the a-frame things go, only one scene -->
@@ -47,7 +56,7 @@
         vr-mode-ui
         cursor="rayOrigin: mouse"
         fog="color:  #796eab;  near:  0;  far:  19.81;  density:  0"
-        environment="preset:  goaland;  active:  true;  skyType:  gradient;  skyColor:  #000000;  horizonColor:  #9992f7;  lighting:  point;  shadow:  true;  lightPosition:  [object Object];  fog:  0.96;  groundTexture:  squares;  dressing:  trees;  dressingAmount:  300;  dressingVariance:  [object Object]"
+        environment="preset:  goaland;  active:  true;  skyType:  gradient;  skyColor:  #000000;  horizonColor:  #9992f7;  lighting:  point;  shadow:  true;  lightPosition:  [object Object];  fog:  0.96;  groundTexture:  squares;  dressing:  trees;  dressingAmount:  300;  dressingVariance:  [object Object];  dressingScale:  6.7"
       >
         <a-light type="ambient" color="gray"></a-light>
         <a-light type="point" intensity="2" position="0 0 -2"></a-light>
