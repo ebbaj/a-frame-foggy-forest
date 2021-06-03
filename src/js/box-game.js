@@ -1,16 +1,14 @@
-//Test click event on all of the boxes
+/*   COMPONENTS   */
 AFRAME.registerComponent("open-box", {
   init: function () {
     let el = this.el;
     this.openBox = function () {
-      //el.setAttribute("color", "#1E9B44");
       if (el.classList.contains("closed")) {
         el.classList.remove("closed");
         el.classList.add("opened");
         console.log(el.classList);
       }
       boxGame();
-      //alert("Box opened");
     };
     this.el.addEventListener("click", this.openBox);
   },
@@ -18,6 +16,8 @@ AFRAME.registerComponent("open-box", {
     this.el.removeEventListener("click", this.openBox);
   },
 });
+
+/*   GAME   */
 
 function boxGame() {
   const box1 = document.getElementById("box-1");
@@ -75,7 +75,7 @@ function changeAlienPopup() {
   const paragraph = document.createElement("p");
   alienCompletedPopup.innerHTML = "";
   paragraph.innerHTML =
-    "Now, get out of my forest! I know there's a way out of here... Somewhere...🤔";
+    "I know I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔";
   alienCompletedPopup.appendChild(paragraph);
 }
 
@@ -124,7 +124,7 @@ function findMissingPiece() {
     {
       id: 2,
       title: "Paul the Oxo:",
-      text: "Now, get out of my forest! I know there's a way out of here... Somewhere...🤔",
+      text: "I know I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔",
       nextText: 2,
     },
   ];

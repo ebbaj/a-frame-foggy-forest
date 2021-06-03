@@ -10,7 +10,8 @@ main {
 
 .popup,
 .boxes-popup,
-.not-found-popup {
+.not-found-popup,
+.popup-style {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -25,6 +26,7 @@ main {
   border: 2px solid #d9d9d9;
   align-self: center;
 }
+
 /*
 .boxes-popup {
   display: flex;
@@ -43,14 +45,15 @@ main {
 }
 */
 .button-div {
-  margin-top: 2rem;
+  margin-top: 1rem;
   align-self: flex-end;
 }
 
 .popup-button,
 #boxes-popup-button,
 #boxes-next-button,
-#next-button {
+#next-button,
+#complete-popup-button {
   background-color: #d9d9d9;
   font-family: "Space Mono", monospace;
   font-size: 18px;
@@ -93,10 +96,19 @@ span {
   margin-bottom: 0;
 }
 
+.esc {
+  font-size: 12px;
+}
+
+.single-button {
+  margin-left: 3.8rem;
+}
+
 @media (max-width: 1024px) {
   .popup,
   .boxes-popup,
-  .not-found-popup {
+  .not-found-popup,
+  #level-complete-popup {
     width: 50%;
   }
 }
@@ -104,7 +116,8 @@ span {
 @media (max-width: 768px) {
   .popup,
   .boxes-popup,
-  .not-found-popup {
+  .not-found-popup,
+  #level-complete-popup {
     width: 60%;
     font-size: 20px;
   }

@@ -9,8 +9,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="src/styles/style.css" />
     <!-- Component scripts -->
-    <script src="src/js/color-toggle.js"></script>
-    <!-- <script src="src/js/target-marker.js"></script> -->
+    <script src="src/js/complete-level.js"></script>
     <script src="src/js/riddle.js"></script>
     <script src="src/js/box-game.js"></script>
   </head>
@@ -21,6 +20,7 @@
         <div id="text"></div>
         <div id="option-buttons"></div>
         <div class="button-div">
+          <p class="esc">Press esc to click</p>
           <button id="next-button" class="button">Next</button>
           <button class="popup-button" onClick="closePopup()">Close</button>
         </div>
@@ -32,6 +32,7 @@
         <h3 id="boxes-title"></h3>
         <p id="boxes-text"></p>
         <div class="button-div">
+          <p class="esc">Press esc to click</p>
           <button id="boxes-next-button" class="button">Next</button>
           <button id="boxes-popup-button" onClick="closeBoxesPopup()">
             Close
@@ -40,14 +41,35 @@
       </div>
 
       <div class="not-found-popup hide">
-        <p>Hmm... The missing piece is not in this one, let's keep looking!</p>
+        <p>Hmm... The missing piece is not in this one, keep looking!</p>
         <div class="button-div">
-          <button id="boxes-popup-button" onClick="closeNotFoundPopup()">
+          <p class="esc">Press esc to click</p>
+          <button
+            id="boxes-popup-button"
+            class="single-button"
+            onClick="closeNotFoundPopup()"
+          >
             Close
           </button>
         </div>
       </div>
       <!-- END OF BOXES GAME-->
+
+      <!-- 3RD CHALLENGE POPUP -->
+      <div id="level-complete-popup" class="popup-style hide">
+        <p>You completed level 3!🥳 Go on to level 4.</p>
+        <div class="button-div">
+          <p class="esc">Press esc to click</p>
+          <button
+            id="complete-popup-button"
+            class="single-button"
+            onClick="closeLevelCompletePopup()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      <!-- END OF 3RD CHALLENGE POPUP -->
 
       <!-- Inside the scene is where all the a-frame things go, only one scene -->
       <a-scene
@@ -71,6 +93,10 @@
             id="door"
             src="src/assets/door/Door 2.gltf"
           ></a-asset-items>
+          <a-asset-items
+            id="chest"
+            src="src/assets/chest/Treasure_Trunk_01.gltf"
+          ></a-asset-items>
         </a-assets>
 
         <a-light type="ambient" color="gray"></a-light>
@@ -79,76 +105,71 @@
 
         <a-entity
           gltf-model="#alien"
-          position="1 -2.180 -4"
+          position="-0.5 -0.01 -4"
           rotation="0 180 0"
-          scale="2.7 2.7 2.7"
+          scale="0.5 0.5 0.5"
           shadow
           target-marker
           open-popup
         ></a-entity>
+
         <a-entity
           gltf-model="#arrow"
-          scale="7 7 7"
+          scale="5 5 5"
           rotation="0 0 90"
-          position="7.630 10 -3"
+          position="5.23 7.73 -3"
         ></a-entity>
-        <!--
-        <a-cylinder
-          position="0 0 -4"
-          radius="0.5"
-          height="1.5"
-          color="#1E9B44"
-          shadow
-          target-marker
-          open-popup
-        >
-        </a-cylinder>
-        -->
+
         <a-entity
           gltf-model="#door"
           id="gate"
           position="40 0 65"
           scale="0.009 0.009 0.009"
           visible="false"
-          color-toggle
+          complete-level
         ></a-entity>
-        <!--
-        <a-box
-          id="gate"
-          color="#181C26"
-          visible="false"
-          position="40 0 65"
-          height="5"
-          color-toggle
-        ></a-box>
-        -->
-        <a-box
+
+        <a-entity
+          gltf-model="#chest"
           id="box-1"
           class="closed"
-          color="#301904"
-          position="-29 0 1"
+          position="-29 -0.02 1"
+          scale="-0.12 -0.12 -0.12"
+          rotation="0 180 180"
           visible="false"
           open-box
-        ></a-box>
-        <a-box
+        ></a-entity>
+
+        <a-entity
+          gltf-model="#chest"
           id="box-2"
           class="closed"
-          color="#301904"
-          position="21 0 7"
+          position="21 -0.02 7"
+          scale="-0.12 -0.12 -0.12"
+          rotation="0 0 180"
           visible="false"
           open-box
-        ></a-box>
-        <a-box
+        ></a-entity>
+
+        <a-entity
+          gltf-model="#chest"
           id="box-3"
           class="closed"
-          color="#301904"
-          position="-1 0 -47"
+          position="-1 -0.02 -47"
+          scale="-0.12 -0.12 -0.12"
+          rotation="0 180 180"
           visible="false"
           open-box
-        ></a-box>
+        ></a-entity>
 
-        <a-entity id="rig">
-          <a-entity camera position="0 2 0" look-controls wasd-controls>
+        <a-entity id="rig" movement-controls="speed: 0.1">
+          <a-entity
+            id="camera"
+            camera
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true"
+            wasd-controls="acceleration:45"
+          >
             <a-cursor id="cursor" raycaster></a-cursor>
           </a-entity>
         </a-entity>

@@ -1,17 +1,33 @@
-//Color toggle of cylinder
-AFRAME.registerComponent("color-toggle", {
+AFRAME.registerComponent("complete-level", {
   init: function () {
     let el = this.el;
-    this.toggleColor = function () {
-      //el.setAttribute("color", "#3F768C");
-      location.reload();
+    this.completeLevel = function () {
+      openLevelCompletePopup();
     };
-    this.el.addEventListener("click", this.toggleColor);
+    this.el.addEventListener("click", this.completeLevel);
   },
   remove: function () {
-    this.el.removeEventListener("click", this.toggleColor);
+    this.el.removeEventListener("click", this.completeLevel);
   },
 });
+
+function openLevelCompletePopup() {
+  let boxesScene = document.querySelector(".boxes-scene");
+  let levelCompletePopup = document.getElementById("level-complete-popup");
+
+  levelCompletePopup.classList.remove("hide");
+  /*levelCompletePopup.style.display = "flex";*/
+  boxesScene.classList.add("layer");
+}
+
+function closeLevelCompletePopup() {
+  let levelCompletePopup = document.getElementById("level-complete-popup");
+  let boxesScene = document.querySelector(".boxes-scene");
+
+  levelCompletePopup.classList.add("hide");
+  /*levelCompletePopup.style.display = "none";*/
+  boxesScene.classList.remove("layer");
+}
 
 //Whenever a component is attached to an entity in a scene, it performs these lifecycle functions at specific times.
 //If a component is attached to an entitiy in the initial page, it will run its' init function when the page loads.

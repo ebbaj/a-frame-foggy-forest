@@ -118,7 +118,7 @@ function game() {
     },
     {
       id: 2,
-      text: "The missing piece to your spaceship is hidden in the fog...",
+      text: " I have hidden he missing piece to your spaceship in the fog...",
       nextText: 3,
     },
     {
