@@ -30,6 +30,7 @@ function boxGame() {
     box3.classList.contains("opened")
   ) {
     openBoxesPopup();
+    changeAlienPopup();
   } else {
     openNotFoundPopup();
   }
@@ -67,6 +68,15 @@ function closeNotFoundPopup() {
 
   notFoundPopup.classList.add("hide");
   boxesScene.classList.remove("layer");
+}
+
+function changeAlienPopup() {
+  const alienCompletedPopup = document.getElementById("text");
+  const paragraph = document.createElement("p");
+  alienCompletedPopup.innerHTML = "";
+  paragraph.innerHTML =
+    "Now, get out of my forest! I know there's a way out of here... Somewhere...🤔";
+  alienCompletedPopup.appendChild(paragraph);
 }
 
 function findMissingPiece() {
@@ -113,7 +123,7 @@ function findMissingPiece() {
     },
     {
       id: 2,
-      title: "Paul:",
+      title: "Paul the Oxo:",
       text: "Now, get out of my forest! I know there's a way out of here... Somewhere...🤔",
       nextText: 2,
     },

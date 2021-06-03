@@ -40,7 +40,7 @@
       </div>
 
       <div class="not-found-popup hide">
-        <p>Hmm... The piece is not in this one, let's keep looking!</p>
+        <p>Hmm... The missing piece is not in this one, let's keep looking!</p>
         <div class="button-div">
           <button id="boxes-popup-button" onClick="closeNotFoundPopup()">
             Close
@@ -58,9 +58,41 @@
         fog="color:  #796eab;  near:  0;  far:  19.81;  density:  0"
         environment="preset:  goaland;  active:  true;  skyType:  gradient;  skyColor:  #000000;  horizonColor:  #9992f7;  lighting:  point;  shadow:  true;  lightPosition:  [object Object];  fog:  0.96;  groundTexture:  squares;  dressing:  trees;  dressingAmount:  300;  dressingVariance:  [object Object];  dressingScale:  6.7"
       >
+        <a-assets>
+          <a-asset-items
+            id="alien"
+            src="src/assets/alien/model.gltf"
+          ></a-asset-items>
+          <a-asset-items
+            id="arrow"
+            src="src/assets/arrow/model.gltf"
+          ></a-asset-items>
+          <a-asset-items
+            id="door"
+            src="src/assets/door/Door 2.gltf"
+          ></a-asset-items>
+        </a-assets>
+
         <a-light type="ambient" color="gray"></a-light>
         <a-light type="point" intensity="2" position="0 0 -2"></a-light>
         <a-sky color="#002746" id="sky"></a-sky>
+
+        <a-entity
+          gltf-model="#alien"
+          position="1 -2.180 -4"
+          rotation="0 180 0"
+          scale="2.7 2.7 2.7"
+          shadow
+          target-marker
+          open-popup
+        ></a-entity>
+        <a-entity
+          gltf-model="#arrow"
+          scale="7 7 7"
+          rotation="0 0 90"
+          position="7.630 10 -3"
+        ></a-entity>
+        <!--
         <a-cylinder
           position="0 0 -4"
           radius="0.5"
@@ -71,6 +103,15 @@
           open-popup
         >
         </a-cylinder>
+        -->
+        <a-entity
+          gltf-model="#door"
+          id="gate"
+          position="2.200 0 -5.490"
+          scale="0.009 0.009 0.009"
+          visible="false"
+        ></a-entity>
+        <!--
         <a-box
           id="gate"
           color="#181C26"
@@ -79,6 +120,7 @@
           height="5"
           color-toggle
         ></a-box>
+        -->
         <a-box
           id="box-1"
           class="closed"
