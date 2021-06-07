@@ -124,7 +124,7 @@ function findMissingPiece() {
     {
       id: 2,
       title: "Paul the Oxo:",
-      text: "I know I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔",
+      text: "I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔",
       nextText: 2,
     },
   ];

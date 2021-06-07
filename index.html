@@ -61,8 +61,13 @@
         <div class="button-div">
           <p class="esc">Press esc to click</p>
           <button
+            id="next-level-button"
+            onclick="window.parent.postMessage('nextLevel')"
+          >
+            Next Level
+          </button>
+          <button
             id="complete-popup-button"
-            class="single-button"
             onClick="closeLevelCompletePopup()"
           >
             Close
