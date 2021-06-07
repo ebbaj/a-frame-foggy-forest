@@ -75,7 +75,7 @@ function changeAlienPopup() {
   const paragraph = document.createElement("p");
   alienCompletedPopup.innerHTML = "";
   paragraph.innerHTML =
-    "I know I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔";
+    "I left some clues for your next missing piece in my cabin. It's located in the forest... Somewhere...🤔";
   alienCompletedPopup.appendChild(paragraph);
 }
 
