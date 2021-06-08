@@ -66,13 +66,13 @@ function game() {
   function riddle(textNode) {
     if (textNode.id === 5) {
       nextButtonElement.disabled = true;
-      correctAnswerButton.innerText = "Mountain";
+      correctAnswerButton.innerText = "D";
       optionButtonsDiv.appendChild(correctAnswerButton);
 
-      incorrectAnswerButton1.innerText = "Giraffe";
+      incorrectAnswerButton1.innerText = "42";
       optionButtonsDiv.appendChild(incorrectAnswerButton1);
 
-      incorrectAnswerButton2.innerText = "House";
+      incorrectAnswerButton2.innerText = "Coffee";
       optionButtonsDiv.appendChild(incorrectAnswerButton2);
 
       correctAnswerButton.addEventListener("click", correctAnswerPrompt);
@@ -137,7 +137,7 @@ function game() {
     },
     {
       id: 5,
-      text: "What has roots that nobody sees, is taller than trees, up, up it goes, and yet never grows?",
+      text: "What's always the last thing to mend, The middle of middle, and end of the end?",
       nextText: 6,
     },
     {
