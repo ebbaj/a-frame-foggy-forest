@@ -24,6 +24,7 @@ function boxGame() {
   const box2 = document.getElementById("box-2");
   const box3 = document.getElementById("box-3");
   const gate = document.getElementById("gate");
+
   if (
     box1.classList.contains("opened") &&
     box2.classList.contains("opened") &&
@@ -39,10 +40,22 @@ function boxGame() {
 function openBoxesPopup() {
   let boxesPopup = document.querySelector(".boxes-popup");
   let boxesScene = document.querySelector(".boxes-scene");
+  const roof = document.getElementById("roof");
+  const floor = document.getElementById("floor");
+  const wall1 = document.getElementById("wall-1");
+  const wall2 = document.getElementById("wall-2");
+  const wall3 = document.getElementById("wall-3");
+  const wall4 = document.getElementById("wall-4");
 
   boxesPopup.classList.remove("hide");
   boxesScene.classList.add("layer");
   gate.setAttribute("visible", true);
+  roof.setAttribute("visible", true);
+  floor.setAttribute("visible", true);
+  wall1.setAttribute("visible", true);
+  wall2.setAttribute("visible", true);
+  wall3.setAttribute("visible", true);
+  wall4.setAttribute("visible", true);
   findMissingPiece();
 }
 

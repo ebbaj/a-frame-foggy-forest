@@ -39,6 +39,10 @@ function game() {
   const incorrectAnswerButton1 = document.createElement("button");
   const incorrectAnswerButton2 = document.createElement("button");
 
+  let span = document.createElement("span");
+  span.innerText = "three";
+  span.classList.add("span-text");
+
   function startGame() {
     showTextNode(1);
     popupButton.disabled = true;
@@ -143,7 +147,7 @@ function game() {
     },
     {
       id: 7,
-      text: "...Only a true scavenger can navigate through the fog and collect the piece from one of the three hidden boxes. Good luck! 🚀",
+      text: `...Only a true scavenger can navigate through the fog and collect the piece from one of the ${span.innerText} hidden boxes. Good luck! 🚀`,
       nextText: 8,
     },
   ];
