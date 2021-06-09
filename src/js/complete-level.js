@@ -29,6 +29,11 @@ function closeLevelCompletePopup() {
   boxesScene.classList.remove("layer");
 }
 
+function nextLevel() {
+  window.parent.postMessage("nextLevel");
+  console.log("You completed level 3");
+}
+
 //Whenever a component is attached to an entity in a scene, it performs these lifecycle functions at specific times.
 //If a component is attached to an entitiy in the initial page, it will run its' init function when the page loads.
 //If a component gets attached to an entitiy after an application has already started...
