@@ -1,6 +1,7 @@
 # Foggy Forest
 
 Hyper Island - Exploring Code module - Brief 1
+Answer the riddle correctly and locate the missing piece in the Foggy Forest.
 
 ### Brief
 Together the class will build a participation-driven online escape game, with worlds and levels inspired by the history that surrounds us. Each team will define the world where the browser escape game exist. Then, individually, develop a website aka level which contain three challenges. The challenges can be made using one or several web technologies, from workshops or elsewhere.
