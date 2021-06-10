@@ -9,6 +9,10 @@ Together the class will build a participation-driven online escape game, with wo
 - Explore and experiment with new technologies
 - Have fun and challenge yourself to try something different
 
+### Tools
+- A-frame
+- HTML, CSS, Javascript
+
 ### World 2 - Escaping HI-22
 The story of World 2 revolves around a space scavenger who has crashlanded on a strange planet. His mission is to find the six pieces missing from his spaceship, that are necessary for him to be able to fly home. In the game he will encounter the OXOs who inhabit the planet, and will have to solve challenges of different kinds to get through the six levels. 
 
