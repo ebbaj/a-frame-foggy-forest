@@ -1,6 +1,6 @@
 # Foggy Forest
 
-Hyper Island - Exploring Code module - Brief 1
+Hyper Island - Exploring Code module - Brief 1 <br />. return
 Answer the riddle correctly and locate the missing piece in the Foggy Forest.
 
 ### Brief
